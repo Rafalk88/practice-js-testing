@@ -8,6 +8,10 @@ test("random number from 1 to 1 returns 1", () => {
 
 test("min & max are typeof Number", () => {
 
-    expect(randomNumber('a', 2)).toStrictEqual(new TypeError('Wpisz liczby!'))
+    expect(() => { 
+
+        randomNumber('a', 2)
+
+    }).toThrow()
 
 })

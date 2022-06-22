@@ -1,13 +1,19 @@
 export default function randomNumber(min, max) {
 
-    const number = Math.floor(Math.random() * max + min)
+    function checkIfNumberType(value) {
 
-    if (isNaN(number)) {
+        if (typeof value !== 'number') {
 
-        return new TypeError('Wpisz liczby!')
+            throw new Error('Podana wartość nie jest liczbą!')
+
+        }
+        return value
 
     }
-    
-    return number
+
+    const checkedMin = checkIfNumberType(min)
+    const checkedMax = checkIfNumberType(max)
+
+    return Math.floor(Math.random() * (checkedMax-checkedMin) + checkedMin)
 
 }
