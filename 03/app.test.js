@@ -15,3 +15,13 @@ test("min & max are typeof Number", () => {
     }).toThrow()
 
 })
+
+test("min is less than max", () => {
+
+    expect(() => { 
+
+        randomNumber(3, 2)
+
+    }).toThrow()
+
+})
