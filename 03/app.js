@@ -14,6 +14,12 @@ export default function randomNumber(min, max) {
     const checkedMin = checkIfNumberType(min)
     const checkedMax = checkIfNumberType(max)
 
+    if (checkedMin > checkedMax) {
+
+        throw new Error('Min nie może być większe od max!')
+
+    }
+
     return Math.floor(Math.random() * (checkedMax-checkedMin) + checkedMin)
 
 }
