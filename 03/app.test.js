@@ -1,37 +1,45 @@
 import randomNumber from './app';
 
-test("random number from 1 to 1 returns 1", () => {
+describe('Random number:', () => {
 
-    expect(randomNumber(1,1)).toBe(1)
+    test("from min = 1 to max = 1, returns 1", () => {
 
-})
+        expect(randomNumber(1,1)).toBe(1)
+    
+    })
 
-test("min & max are typeof Number", () => {
+    test("is between min and max", () => {
 
-    expect(() => { 
-
-        randomNumber('a', 2)
-
-    }).toThrow()
-
-})
-
-test("min is less than max", () => {
-
-    expect(() => { 
-
-        randomNumber(3, 2)
-
-    }).toThrow()
+        expect(() => { 
+    
+            randomNumber(1, 2)
+    
+        }).toThrow()
+    
+    })
 
 })
 
-test("Random number is between min and max", () => {
+describe('Min & max:', () => {
 
-    expect(() => { 
+    test("are typeof Number", () => {
 
-        randomNumber(1, 2)
+        expect(() => { 
 
-    }).toThrow()
+            randomNumber('a', 2)
+
+        }).toThrow()
+
+    })
+
+    test("Min < max", () => {
+
+        expect(() => { 
+
+            randomNumber(3, 2)
+
+        }).toThrow()
+
+    })
 
 })
