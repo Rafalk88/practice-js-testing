@@ -1,5 +1,13 @@
 export default function randomNumber(min, max) {
 
-    return Math.floor(Math.random() * max + min)
+    const number = Math.floor(Math.random() * max + min)
+
+    if (isNaN(number)) {
+
+        return new TypeError('Wpisz liczby!')
+
+    }
+    
+    return number
 
 }
