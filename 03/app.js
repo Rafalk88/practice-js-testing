@@ -20,6 +20,13 @@ export default function randomNumber(min, max) {
 
     }
 
-    return Math.floor(Math.random() * (checkedMax-checkedMin) + checkedMin)
+    const number = Math.floor(Math.random() * (checkedMax-checkedMin) + checkedMin)
+
+    if (number < checkedMin && number >= checkedMax) {
+
+        throw new Error('Losowa liczba jest większa niż zakres!')
+
+    }
+    return number
 
 }

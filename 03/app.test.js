@@ -25,3 +25,13 @@ test("min is less than max", () => {
     }).toThrow()
 
 })
+
+test("Random number is between min and max", () => {
+
+    expect(() => { 
+
+        randomNumber(1, 2)
+
+    }).toThrow()
+
+})
