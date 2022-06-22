@@ -8,7 +8,7 @@ describe('Random number:', () => {
     
     })
 
-    test("is between min and max", () => {
+    test("isn't between min and max", () => {
 
         expect(() => { 
     
