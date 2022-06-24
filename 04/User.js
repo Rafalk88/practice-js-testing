@@ -6,6 +6,7 @@ export default class User {
 
         this.setProp('email', email)
         this.setProp('password', password)
+        this.getEmail()
 
     }
 
@@ -17,14 +18,24 @@ export default class User {
 
     getEmail() {
 
-        const {email, password} = this
+        const {email, undefined} = this
+        const at = '@'
+
+        if (!(email.includes(at))) {
+
+            throw new Error(
+                'You wrote a wrong email!'
+            )
+
+        }
+
         return email
 
     }
 
     getPassword() {
 
-        const {email, password} = this
+        const {undefined, password} = this
         return password
 
     }
