@@ -8,6 +8,7 @@ export default class User {
         this.setProp('password', password)
         this.getEmail()
         this.getPassword()
+        this.login()
 
     }
 
@@ -41,12 +42,29 @@ export default class User {
         if (password.length < 6) {
 
             throw new Error(
-                'Password must be at least six chars length!'
+                'Password must be at least six characters length!'
             )
 
         }
 
         return password
+
+    }
+
+    login() {
+
+        const {email, undefined} = this
+        const regEx = '@devmentor.pl'
+
+        if (email.includes(regEx)) {
+
+            return true
+
+        } else { 
+
+            return false
+        
+        }
 
     }
 
