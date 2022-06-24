@@ -7,6 +7,7 @@ export default class User {
         this.setProp('email', email)
         this.setProp('password', password)
         this.getEmail()
+        this.getPassword()
 
     }
 
@@ -36,6 +37,15 @@ export default class User {
     getPassword() {
 
         const {undefined, password} = this
+
+        if (password.length < 6) {
+
+            throw new Error(
+                'Password must be at least six chars length!'
+            )
+
+        }
+
         return password
 
     }
